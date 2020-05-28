@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 function ProductCard(props) {
   const { imageUrl, name, description, price, isSelected, className } = props;
+  console.log('isSelected', isSelected)
 
   const priceText = price?.toLocaleString("en-US", {
     currency: "USD",

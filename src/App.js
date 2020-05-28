@@ -1,13 +1,16 @@
 import React from "react";
 import "./App.scss";
+import { Provider } from "react-redux";
 
 import { HomePage } from "pages/HomePage";
 
+import { store } from "store";
+
 function App() {
   return (
-    <div className="App">
+    <Provider store={store}>
       <HomePage />
-    </div>
+    </Provider>
   );
 }
 

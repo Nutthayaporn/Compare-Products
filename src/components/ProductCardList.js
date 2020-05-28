@@ -1,32 +1,38 @@
 import React from "react";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
 
 import { ProductCard } from "components/ProductCard";
 
+import { productSlice } from "store";
+
 function ProductCardList(props) {
-  const { products, selectedProducts, className } = props;
+  const { products, selectedProductIds, className } = props;
+  console.log("selectedProductIds", selectedProductIds);
+
+  const dispatch = useDispatch();
   return (
     <div className={className}>
-      {products.map((product) => (
-        <ProductCard
-          imageUrl={product.imageUrl}
-          name={product.name}
-          description={product.description}
-          price={product.price}
-          isSelected={selectedProducts.some(
-            (selectedProduct) => selectedProduct.id === product.id
-          )}
-          onChange={(isSelected) => {
-            if (!isSelected) {
-              props.onChange(
-                selectedProducts.filter(({ id }) => id !== product.id)
-              );
-            } else {
-              props.onChange(selectedProducts.concat(product));
-            }
-          }}
-        />
-      ))}
+      {products.map((product) => {
+        return (
+          <ProductCard
+            imageUrl={product.imageUrl}
+            name={product.name}
+            description={product.description}
+            price={product.price}
+            isSelected={selectedProductIds.includes(product.id)}
+            onChange={(isSelected) => {
+              if (!isSelected) {
+                dispatch(
+                  productSlice.actions.removeSelectedProduct(product.id)
+                );
+              } else {
+                dispatch(productSlice.actions.addSelectedProduct(product.id));
+              }
+            }}
+          />
+        );
+      })}
     </div>
   );
 }
