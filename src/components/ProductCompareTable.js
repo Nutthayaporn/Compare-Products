@@ -51,10 +51,10 @@ function ProductCompareTable(props) {
         </tr>
         <tr>
           <th scope="row" className="table-active">
-            Conditions
+            Description
           </th>
           {products.map((product, index) => {
-            return <td key={index}>{product?.condition}</td>;
+            return <td key={index}>{product?.description}</td>;
           })}
         </tr>
       </tbody>

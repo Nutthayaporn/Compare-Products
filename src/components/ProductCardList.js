@@ -8,7 +8,6 @@ import { productSlice } from "store";
 
 function ProductCardList(props) {
   const { products, selectedProductIds, className } = props;
-  console.log("selectedProductIds", selectedProductIds);
 
   const dispatch = useDispatch();
   return (
