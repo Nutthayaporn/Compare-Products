@@ -52,10 +52,10 @@ const StyledProductCard = styled(ProductCard)`
   > .image {
     position: relative;
     margin: 0;
-
     padding-bottom: 110%;
-
     background-color: ${(props) => props.isSelected && "#02c488"};
+    overflow: hidden;
+
     > img {
       position: absolute;
       top: 0;
@@ -68,7 +68,12 @@ const StyledProductCard = styled(ProductCard)`
 
       width: 100%;
       height: 100%;
-      opacity: ${(props) => (props.isSelected ? 0.5 : 1)};
+      opacity: ${(props) => (props.isSelected ? 0.7 : 1)};
+      transition: all 0.4s;
+
+      &:hover {
+        transform: ${(props) => (props.isSelected ? 'scale(1)' : 'scale(1.2)')};
+      }
     }
 
     > .remove-button {

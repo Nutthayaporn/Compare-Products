@@ -70,9 +70,10 @@ const StyledProductCompareTable = styled(ProductCompareTable)`
   tbody > tr > td > .color {
     display: inline-block;
 
-    width: 15px;
-    height: 15px;
+    width: 17px;
+    height: 17px;
     border-radius: 50%;
+    border: 1px solid lightgray;
     &:not(:last-child) {
       margin-right: 5px;
     }
