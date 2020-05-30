@@ -19,14 +19,12 @@ function HomePage(props) {
   return (
     <div className={className}>
       <div className="container">
-        <h2>Please Select Two or More</h2>
+        <h2>Please Select Products to Compare</h2>
         <ProductCardList
           products={products}
           selectedProductIds={selectedProductIds}
         />
-        {selectedProducts.length > 0 && (
-          <ProductCompareTable products={selectedProducts} />
-        )}
+        <ProductCompareTable products={selectedProducts} />
       </div>
     </div>
   );

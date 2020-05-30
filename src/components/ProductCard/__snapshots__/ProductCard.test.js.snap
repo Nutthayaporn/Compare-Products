@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductCard When product card is selected The card should change color 1`] = `
+<div
+  class="sc-AxjAm drEyGA"
+  tabindex="1"
+>
+  <figure
+    class="image"
+    data-testid="background-image"
+  >
+    <img
+      alt="iPhone SE"
+      src="https://placehold.it/720"
+    />
+    <button
+      class="btn btn-outline-light remove-button"
+    >
+      Remove
+    </button>
+  </figure>
+  <div
+    class="info-block"
+  >
+    <div
+      class="info"
+    >
+      <div
+        class="name"
+      >
+        iPhone SE
+      </div>
+      <div
+        class="description"
+      >
+        64GB
+      </div>
+    </div>
+    <h5
+      class="price"
+    >
+      $14,900
+    </h5>
+  </div>
+</div>
+`;

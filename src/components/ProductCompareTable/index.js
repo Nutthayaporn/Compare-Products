@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 function ProductCompareTable(props) {
   const { products, className } = props;
+  if (products.length === 0) return null;
   return (
     <table className={`table ${className}`} data-testid="table">
       <thead>
@@ -38,7 +39,7 @@ function ProductCompareTable(props) {
           {products.map((product, index) => {
             return (
               <td className="td-color" key={index}>
-                {product?.colors.map((color, index2) => (
+                {product.colors?.map((color, index2) => (
                   <div
                     className="color"
                     key={index2}
@@ -54,7 +55,7 @@ function ProductCompareTable(props) {
             Description
           </th>
           {products.map((product, index) => {
-            return <td key={index}>{product?.description}</td>;
+            return <td key={index}>{product.description}</td>;
           })}
         </tr>
       </tbody>
